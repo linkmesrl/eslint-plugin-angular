@@ -70,6 +70,7 @@ We provide also three samples :
 | 'ng_no_services': [2, ['$http', '$resource', 'Restangular']] | Some services should be used only in a specific AngularJS service (Ajax-based service for example), in order to follow the separation of concerns paradigm. The second parameter specifies the services. The third parameter can be a list of angular objects (controller, factory, etc.). Or second parameter can be an object, where keys are angular object names and value is a list of services (like {controller: ['$http'], factory: ['$q']}) |
 | 'ng_no_service_method': 2                                    | You should prefer the factory() method instead of service() [Y040](https://github.com/johnpapa/angular-styleguide#style-y040)|
 | 'ng_on_watch': 2                                             | Watch and On methods on the scope object should be assigned to a variable, in order to be deleted in a $destroy event handler |
+| 'ng_provider_name': 2                                             | All your providers should have a name starting with the parameter you can define in your config object. The second parameter can be a Regexp wrapped in quotes. You can not prefix your providers by "$" (reserved keyword for AngularJS providers) ("ng_provider_name":  [2, "ng"]) |
 | 'ng_service_name': 2                                             | All your services should have a name starting with the parameter you can define in your config object. The second parameter can be a Regexp wrapped in quotes. You can not prefix your services by "$" (reserved keyword for AngularJS services) ("ng_service_name":  [2, "ng"]) [Y125](https://github.com/johnpapa/angular-styleguide#style-y125) |
 | 'ng_timeout_service': 2                                      | Instead of the default setTimeout function, you should use the AngularJS wrapper service $timeout [Y181](https://github.com/johnpapa/angular-styleguide#style-y181) |
 | 'ng_typecheck_array': 2                                      | You should use the angular.isArray method instead of the default JavaScript implementation (typeof [] === "[object Array]"). |
@@ -101,6 +102,7 @@ Here are the things you should do before sending a Pull Request with a new Rule 
 * Create an unit test for this rule in the test directory
 * Update the main index.js file, in order to add the new rule in the 'rules' property, and set the default configuration in the rulesConfig property
 * Update the "Rules" part of the README.md file with a small description of the rule and its default configuration.
+* Run your test with `npm test`
 
 ## Default ESLint Configuration file
 

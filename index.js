@@ -36,7 +36,8 @@
                   'ng_typecheck_object': require('./rules/ng_typecheck_object'),
                   'ng_typecheck_regexp': require('./rules/ng_typecheck_regexp'),
                   'ng_typecheck_string': require('./rules/ng_typecheck_string'),
-                  'ng_window_service': require('./rules/ng_window_service')
+                  'ng_window_service': require('./rules/ng_window_service'),
+                  'ng_provider_name': require('./rules/ng_provider_name'),
             },
             rulesConfig: {
                   'ng_angularelement': 1,
@@ -72,7 +73,8 @@
                   'ng_typecheck_object': 2,
                   'ng_typecheck_regexp': 2,
                   'ng_typecheck_string': 2,
-                  'ng_window_service': 2
+                  'ng_window_service': 2,
+                  'ng_provider_name': [2, /[a-z].*Provider$/]
             }
       };
 })();

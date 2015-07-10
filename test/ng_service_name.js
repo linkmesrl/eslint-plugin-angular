@@ -9,7 +9,7 @@ var eslint = require('../node_modules/eslint/lib/eslint'),
 // Tests
 //------------------------------------------------------------------------------
 var valid = [], invalid = [];
-['service', 'factory', 'provider', 'constant', 'value'].forEach(function(syntax){
+['service', 'factory', 'constant', 'value'].forEach(function(syntax){
     valid.push({
         code: 'app.' + syntax + '("eslintService", function(){});',
         args: [1, 'eslint']

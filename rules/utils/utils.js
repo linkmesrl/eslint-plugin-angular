@@ -91,12 +91,17 @@
 
 		isAngularServiceDeclaration: function(node){
 			return this.isAngularComponent(node) && this.isMemberExpression(node.callee)
-				&& node.callee.object.name !== '$provide' && (node.callee.property.name === 'service' || node.callee.property.name === 'factory' || node.callee.property.name === 'constant' || node.callee.property.name === 'value')
+				&& node.callee.object.name !== '$provide' && (node.callee.property.name === 'service' || node.callee.property.name === 'factory' || node.callee.property.name === 'value')
 		},
 
 		isAngularProviderDeclaration: function(node){
 			return this.isAngularComponent(node) && this.isMemberExpression(node.callee)
 				&& node.callee.object.name !== '$provide' && (node.callee.property.name === 'provider')
+		},
+
+		isAngularConstantDeclaration: function(node){
+			return this.isAngularComponent(node) && this.isMemberExpression(node.callee)
+				&& node.callee.object.name !== '$provide' && (node.callee.property.name === 'constant')
 		},
 
 		isAngularModuleDeclaration: function(node){
